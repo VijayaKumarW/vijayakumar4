@@ -1,0 +1,10 @@
+//php important CIA questions//
+1.write a program insert update and delete in mysql program
+2.explain directory related functions.
+3.explain image related functions.
+4.different types of joins.
+5.explain replace  mysql command.
+6.discuss scope resolution operator in class.
+7.what are the include and require function.
+8.explain any five sql commands.
+9.discuss overloading concepts.

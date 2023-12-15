@@ -1,0 +1,57 @@
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="registrationform";
+$con=mysqli_connect($servername,$username,$password,$dbname);
+
+session_start();
+if($_SESSION["favcolor"]!="green"){
+	
+	header("Location:./login.php");
+}
+
+if(isset($_POST['b1']))
+{
+	
+        
+	session_destroy();
+	echo "febdbswbs";
+	header("Location:./login.php");
+	
+}
+
+?>
+<html>
+<head>
+<style>
+input[type="submit"]{
+	margin-left:30px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Fira+Sans:ital,wght@0,200;0,500;1,900&family=Road+Rage&display=swap" rel="stylesheet">
+<title>parentindex</title>
+</head>
+<body>
+<?php
+include"topnav.php";
+?>
+<form method="post" action="">
+<div class="container">
+<h3 class="page-header">Parent Index</h1>
+<div class="frm">
+<div class="box">
+<center>
+<a href="newchild.php" class="button">Add New Child</a><br><br>
+<a href="viewchild.php" class="button">viewchild</a><br><br>
+<a href="VaccineRemainder.php" class="button">vaccine remainder</a><br><br>
+<a href="searchvaccine.php" class="button">search vaccine</a><br><br>
+<input type="submit" name="b1" value="logout"><br><br>
+</center>
+</div>
+</div>
+</div>
+</body>
+</form>
+</html>

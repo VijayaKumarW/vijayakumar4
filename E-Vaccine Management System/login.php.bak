@@ -1,0 +1,61 @@
+
+<?php
+if(isset($_POST['b1']))
+{
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="registrationform";
+$con=mysqli_connect($servername,$username,$password,$dbname);
+
+$na=$_POST['t1'];
+$pas=$_POST['t2'];	
+$sql="select * from register where uname='$na' && password='$pas'";
+$result = mysqli_query($con, $sql);
+$_SESSION["$na"]="uname";
+echo "Logged in $na";
+if (mysqli_num_rows($result) > 0) {
+ // output data of each row
+ session_start();
+ $_SESSION["favcolor"] = "green";  
+ header("Location: ./parentindex.php");
+} else {
+ echo "<script>alert('Check your username and password')</script>";
+ }
+
+}
+?>
+<html>
+<head>
+<style>
+img{
+height:90px;
+width:60px;
+margin-top:20px;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Fira+Sans:ital,wght@0,200;0,500;1,900&family=Road+Rage&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+<title>Login page</title>
+</head>
+<?php
+include"topnav.php";
+?>
+<form method="post" action="">
+<div class="container">
+<h3 class="page-header">User Login</h1>
+<div class="frm">
+<div class="box">
+<label>User Name</label>
+<input type="text" name="t1" placeholder="Enter your name" required><br><br>
+<label>Password</label>
+<input type="password" name="t2" placeholder="Enter your password" required><br><br>
+<input type="submit" name="b1" value="submit">
+<a href="registration.php"> new user</a>
+</div>
+</div>
+</div>
+</form>
+
+</body>
+</html>

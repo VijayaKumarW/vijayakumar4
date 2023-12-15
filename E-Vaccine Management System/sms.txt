@@ -1,0 +1,19 @@
+public class mainactivity{
+button b1
+oncreate{
+b1=findviewbyId(R.id.button)
+}
+public void sms(view view)
+{
+intent i=new Intent(Intent.ActionView);
+i.setData(Uri.parse("SMS To"));
+i.putExtra("Address","8248834289");
+i.putExtra(SMS_body,"Welcome to MSC-IT");
+try{
+StartActivity(i);
+finish();
+}
+catch(Exception e)
+{
+}
+}

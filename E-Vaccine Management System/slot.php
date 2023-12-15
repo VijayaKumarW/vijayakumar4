@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+body{background-size:cover;}
+a{background-color:#f2f9; border-radius:10px; border:none; font-size:20px; color:black; cursor:pointer; width:200px; height:200px;}
+a:hover{background-color:green;}
+</style>
+</head>
+<center>
+<body>
+<div class="container">
+<h3 class="page-header"> Admin </h3>
+<div class="frm">
+<div class="box">
+<br>
+<a href="childdetails.php" >view child Details</a>
+<a href="#" >Allocat Vaccine</a>
+<a href="report.php" >View Report</a>
+<a href="searchvaccine.php" >search vaccine</a>
+</center>
+</div>
+</div>
+</div>
+</body>
+</html>

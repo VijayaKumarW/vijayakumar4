@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Admin page</title>
+</head>
+<style>
+            input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f6;
+  padding: 20px 30px;
+  width: 400px;
+   height:600px;
+  
+}
+
+body{background-size:cover; background-repeat: none;}
+
+input[type=submit]{
+
+    width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+a{
+    width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration:none;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+h3{font-size:40px; text-shadow:1px 1px red;}
+a:hover{background-color: #45a049;}
+</style>
+<body style="background-image: url('images.jpg')">
+<form  method="post" action="admin-index.php">
+<center>
+<div class="card">
+<img src="0083f9a69c.png" width="100px">
+<h3 style=color:yellow;>Admin</h3>
+<input type="text" name="t1" placeholder="Enter your name" required><br>
+<input type="password" name="t2" placeholder="Enter your password" required><br>
+<input type="submit" name="b1" value="submit">
+<a href="index.html" class="button">back</a>
+</div>
+</center>
+</form>
+
+</body>
+</html>

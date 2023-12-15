@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="registrationform";
+$con=mysqli_connect($servername,$username,$password,$dbname);
+if(isset($_POST['submit']))
+{
+$name=$_POST['t1'];
+$pwd=$_POST['t2'];
+$mobileno=$_POST['t3'];
+$dob=$_POST['t4'];
+$emailid=$_POST['t5'];
+
+  	$sql_u = "SELECT * FROM register WHERE uname='$name'";
+  	$sql_e = "SELECT * FROM register WHERE mobileno='$mobileno'";
+  	$res_u = mysqli_query($con, $sql_u);
+  	$res_e = mysqli_query($con, $sql_e);
+
+  	if (mysqli_num_rows($res_u) > 0) {
+  	  echo "<script>alert('Sorry... username already taken')</script>"; 	
+  	}else if(mysqli_num_rows($res_e) > 0){
+  	  echo "<script>alert('Sorry... mobileno already taken')</script>"; 
+	}
+else
+{
+$name="";
+$pwd="";
+$mobileno="";
+$dob="";
+$emailid="";
+$sql="insert into register values('$name','$pwd','$mobileno','$dob','$emailid')";
+$results=mysqli_query($con,$sql);
+echo"<script>alert('new user registered successfully uname=$name and mobileno=$mobileno')</script>";
+exit();
+}
+}
+?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+  <title>user registration</title>
+</head>
+
+<body>
+<?php
+include"topnav.php";
+?>
+<form method="post" action="">
+<div class="container">
+<h3 class="page-header"> New User Register </h1>
+<div class="frm">
+<div class="box">
+    <label>UserName</label>
+<input type="text" name="t1" placeholder="enter the username" required>
+<label>Password</label>
+<input type="password" name="t2" placeholder="enter the password" required>
+<label>MobileNo</label>
+<input type="number" name="t3" placeholder="enter the mobileno" required>
+<label>Date Of Birth</label>
+<input type="date"  name="t4" placeholder="DOB" required>
+<label>EMail-Id</label>
+<input type="email" name="t5" placeholder="enter the email-id" required>
+<input type="submit" name="submit" value="registration" required>
+<a href="login.php">already registered</a>
+</div>
+</div>
+</div>
+</form>
+
+
+</body>
+
+</html>
